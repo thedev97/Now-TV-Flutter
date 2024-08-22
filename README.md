@@ -1,6 +1,6 @@
 # now_tv_v1
 
-Football streaming application.
+Sports streaming platform.
 
 ## Getting Started
 
