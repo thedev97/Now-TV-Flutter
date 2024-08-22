@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:now_tv_v1/theme/theme_helper.dart';
 
 class NowTvTextFormField extends StatelessWidget {
-  final String label;
 
   const NowTvTextFormField({super.key, required this.label});
+  final String label;
 
   @override
   Widget build(BuildContext context) {

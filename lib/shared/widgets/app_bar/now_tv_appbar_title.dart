@@ -4,10 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:now_tv_v1/theme/theme_helper.dart';
 
 class GPayAppBarTitle extends StatelessWidget {
-  final String text1;
-  final String text2;
-  final EdgeInsetsGeometry? margin;
-  final Function()? onTap;
 
   const GPayAppBarTitle(
       {super.key,
@@ -15,6 +11,10 @@ class GPayAppBarTitle extends StatelessWidget {
       required this.text2,
       this.margin,
       this.onTap});
+  final String text1;
+  final String text2;
+  final EdgeInsetsGeometry? margin;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class GPayAppBarTitle extends StatelessWidget {
       child: Padding(
         padding: margin ?? EdgeInsets.zero,
         child: Row(
-          children: [
+          children: <Widget>[
             Text(text1,
                 style: theme.textTheme.titleLarge!.copyWith(
                     color: theme.colorScheme.onPrimaryContainer, fontSize: 22)),

@@ -19,11 +19,13 @@ class MainScreenState extends State<MainScreen> {
     init();
   }
 
-  init() async {
+  Future<void> init() async {
     controller = PageController(initialPage: currentPage);
-    setStatusBarColor(Colors.transparent,
-        statusBarIconBrightness: Brightness.light,
-        statusBarBrightness: Brightness.light);
+    setStatusBarColor(
+      Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.light,
+    );
   }
 
   @override
@@ -33,8 +35,10 @@ class MainScreenState extends State<MainScreen> {
   }
 
   @override
-  void setState(fn) {
-    if (mounted) super.setState(fn);
+  void setState(VoidCallback fn) {
+    if (mounted) {
+      super.setState(fn);
+    }
   }
 
   @override
@@ -43,10 +47,12 @@ class MainScreenState extends State<MainScreen> {
       body: PageView(
         reverse: true,
         pageSnapping: true,
-        onPageChanged: (index) {
-          currentPage = index;
+        onPageChanged: (int index) {
+          setState(() {
+            currentPage = index;
+          });
         },
-        children:  [
+        children: <Widget>[
           OnboardingScreen(),
         ],
       ),

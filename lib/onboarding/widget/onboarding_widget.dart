@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:now_tv_v1/onboarding/widget/onboarding_actions.dart';
 import 'package:now_tv_v1/shared/core/blur_background.dart';
 
-class OnboardingWidget extends StatelessWidget {
-  final String imageUrl;
-  final String title;
-  final String desc;
-  final int pageIndex;
-  final PageController controller; // Add controller here
+class OnboardingWidget extends StatelessWidget { // Add controller here
 
   const OnboardingWidget({
     required this.imageUrl,
@@ -17,11 +12,16 @@ class OnboardingWidget extends StatelessWidget {
     required this.controller, // Add controller here
     super.key,
   });
+  final String imageUrl;
+  final String title;
+  final String desc;
+  final int pageIndex;
+  final PageController controller;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: [
+      children: <Widget>[
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -37,11 +37,11 @@ class OnboardingWidget extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              children: [
+              children: <Widget>[
                 Text(title,
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       color: const Color(0xff01dc9d),
-                      shadows: [
+                      shadows: <Shadow>[
                         Shadow(
                           offset: const Offset(2.0, 2.0),
                           blurRadius: 3.0,

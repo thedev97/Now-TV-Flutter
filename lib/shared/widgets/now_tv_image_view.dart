@@ -4,18 +4,6 @@ import 'package:now_tv_v1/shared/core/now_tv_image_constant.dart';
 
 
 class NowTvImageView extends StatelessWidget {
-  final String? imagePath;
-
-  final double? height;
-  final double? width;
-  final Color? color;
-  final BoxFit? fit;
-  final String placeHolder;
-  final Alignment? alignment;
-  final VoidCallback? onTap;
-  final EdgeInsetsGeometry? margin;
-  final BorderRadius? radius;
-  final BoxBorder? border;
 
   const NowTvImageView({
     super.key,
@@ -31,6 +19,18 @@ class NowTvImageView extends StatelessWidget {
     this.border,
     this.placeHolder = NowTvImageConstant.imageNotFound,
   });
+  final String? imagePath;
+
+  final double? height;
+  final double? width;
+  final Color? color;
+  final BoxFit? fit;
+  final String placeHolder;
+  final Alignment? alignment;
+  final VoidCallback? onTap;
+  final EdgeInsetsGeometry? margin;
+  final BorderRadius? radius;
+  final BoxBorder? border;
 
   @override
   Widget build(BuildContext context) {

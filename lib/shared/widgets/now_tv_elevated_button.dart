@@ -53,7 +53,7 @@ class NowTvElevatedButton extends NowTvBaseButton {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+            children: <Widget>[
               leftIcon ?? const SizedBox.shrink(),
               Text(text,
                   style: buttonTextStyle ??

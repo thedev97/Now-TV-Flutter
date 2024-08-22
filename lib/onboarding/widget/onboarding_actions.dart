@@ -3,15 +3,15 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:now_tv_v1/shared/widgets/now_tv_elevated_button.dart';
 import 'package:now_tv_v1/theme/theme_helper.dart';
 
-class OnboardingActions extends StatelessWidget {
-  final int pageIndex;
-  final PageController controller; // Add controller here
+class OnboardingActions extends StatelessWidget { // Add controller here
 
   const OnboardingActions({
     required this.pageIndex,
     required this.controller, // Add controller here
     super.key,
   });
+  final int pageIndex;
+  final PageController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class OnboardingActions extends StatelessWidget {
         mainAxisAlignment: pageIndex == 2
             ? MainAxisAlignment.center
             : MainAxisAlignment.spaceBetween,
-        children: [
+        children: <Widget>[
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
             child: NowTvElevatedButton(

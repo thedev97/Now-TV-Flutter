@@ -9,10 +9,10 @@ class NowTvRoutes {
   static const String mainScreen = '/main';
   static const String homeScreen = '/home';
 
-  static Map<String, WidgetBuilder> get routes => {
-        initialRoute: (context) => const SplashScreen(),
-        splashScreen: (context) => const SplashScreen(),
-        onboardingScreen: (context) => OnboardingScreen(),
+  static Map<String, WidgetBuilder> get routes => <String, WidgetBuilder>{
+        initialRoute: (BuildContext context) => const SplashScreen(),
+        splashScreen: (BuildContext context) => const SplashScreen(),
+        onboardingScreen: (BuildContext context) => OnboardingScreen(),
         //mainScreen: (context) => const MainScreen(),
         //homeScreen: (context) => const HomeScreen(),
       };

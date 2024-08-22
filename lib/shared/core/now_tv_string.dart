@@ -1,3 +1,3 @@
 class NowTvStrings {
-  static const String appTitle = " Now TV";
+  static const String appTitle = ' Now TV';
 }

@@ -7,24 +7,24 @@ import 'package:now_tv_v1/theme/theme_helper.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatelessWidget {
-  final PageController controller = PageController(initialPage: 0);
 
   OnboardingScreen({super.key});
+  final PageController controller = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: theme.primaryColor,
       body: BlocBuilder<OnboardingCubit, OnboardingState>(
-        builder: (context, state) {
+        builder: (BuildContext context, OnboardingState state) {
           return Stack(
             alignment: Alignment.center,
-            children: [
+            children: <Widget>[
               PageView(
                 controller: controller,
-                onPageChanged: (value) =>
+                onPageChanged: (int value) =>
                     context.read<OnboardingCubit>().updatePage(value),
-                children: [
+                children: <Widget>[
                   OnboardingWidget(
                     imageUrl: NowTvImageConstant.onboarding_1,
                     title: 'Easy Streaming',

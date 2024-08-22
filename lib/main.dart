@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nested/nested.dart' show SingleChildWidget;
 import 'package:now_tv_v1/onboarding/cubit/onboarding_cubit.dart';
 import 'package:now_tv_v1/routes/now_tv_routes.dart';
 import 'package:now_tv_v1/shared/core/now_tv_string.dart';
@@ -8,8 +9,8 @@ import 'theme/theme_helper.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Future.wait([
-    SystemChrome.setPreferredOrientations([
+  Future.wait(<Future<void>>[
+    SystemChrome.setPreferredOrientations(<DeviceOrientation>[
       DeviceOrientation.portraitUp,
     ]),
   ]).then((_) {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
+      providers: <SingleChildWidget>[
         BlocProvider<OnboardingCubit>(
           create: (_) => OnboardingCubit(),
         ),

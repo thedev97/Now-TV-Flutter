@@ -20,9 +20,9 @@ class SplashScreenState extends State<SplashScreen> {
     init();
   }
 
-  init() async {
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await Future.delayed(const Duration(seconds: 2));
+  Future<void> init() async {
+    SchedulerBinding.instance.addPostFrameCallback((Duration timeStamp) async {
+      await Future<void>.delayed(const Duration(seconds: 2));
       if (mounted) {
         finish(context);
         const MainScreen().launch(context);
@@ -30,28 +30,32 @@ class SplashScreenState extends State<SplashScreen> {
     });
   }
 
+
   @override
-  void setState(fn) {
-    if (mounted) super.setState(fn);
+  void setState(VoidCallback fn) {
+    if (mounted) {
+      super.setState(fn);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          body: Center(
-        child: at_kit.AnimatedTextKit(
-          animatedTexts: [
-            at_kit.ColorizeAnimatedText(
-              'Now TV',
-              textStyle: colorizeTextStyle,
-              colors: colorizeColors,
-            )
-          ],
-          isRepeatingAnimation: true,
-          onTap: () {},
+        body: Center(
+          child: at_kit.AnimatedTextKit(
+            animatedTexts: <at_kit.AnimatedText>[
+              at_kit.ColorizeAnimatedText(
+                'Now TV',
+                textStyle: colorizeTextStyle,
+                colors: colorizeColors,
+              )
+            ],
+            isRepeatingAnimation: true,
+            onTap: () {},
+          ),
         ),
-      )),
+      ),
     );
   }
 }
